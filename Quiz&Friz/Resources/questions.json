@@ -1,0 +1,430 @@
+{
+
+    "categories": [
+      {
+        "name": "Cyberbezpieczeństwo",
+        "icon": "shield.fill",
+        "questions": [
+          {
+            "question": "Co to jest phishing?",
+            "options": [
+              "Atak na serwer",
+              "Fałszywe wiadomości e-mail",
+              "Złośliwe oprogramowanie",
+              "Skanowanie portów"
+            ],
+            "correct_answer": "Fałszywe wiadomości e-mail"
+          },
+          {
+            "question": "Jakie zabezpieczenie stosuje się do ochrony sieci bezprzewodowej?",
+            "options": [
+              "WEP",
+              "WPA2",
+              "SSL",
+              "HTTP"
+            ],
+            "correct_answer": "WPA2"
+          },
+          {
+            "question": "Co to jest firewall?",
+            "options": [
+              "Program antywirusowy",
+              "Zabezpieczenie sieciowe",
+              "Typ malware",
+              "Rodzaj ataku"
+            ],
+            "correct_answer": "Zabezpieczenie sieciowe"
+          },
+          {
+            "question": "Jakie jest główne zadanie szyfrowania?",
+            "options": [
+              "Przechowywanie danych",
+              "Ochrona prywatności",
+              "Optymalizacja bazy danych",
+              "Zwiększenie wydajności"
+            ],
+            "correct_answer": "Ochrona prywatności"
+          },
+          {
+            "question": "Co to jest malware?",
+            "options": [
+              "Oprogramowanie zabezpieczające",
+              "Złośliwe oprogramowanie",
+              "Oprogramowanie systemowe",
+              "Program antywirusowy"
+            ],
+            "correct_answer": "Złośliwe oprogramowanie"
+          },
+          {
+            "question": "Jakie dane są najczęściej celem ataków?",
+            "options": [
+              "Dane osobowe",
+              "Dane finansowe",
+              "Hasła",
+              "Wszystkie powyższe"
+            ],
+            "correct_answer": "Wszystkie powyższe"
+          },
+          {
+            "question": "Co to jest ransomware?",
+            "options": [
+              "Typ wirusa",
+              "Oprogramowanie do monitorowania",
+              "Złośliwe oprogramowanie żądające okupu",
+              "Program zabezpieczający"
+            ],
+            "correct_answer": "Złośliwe oprogramowanie żądające okupu"
+          },
+          {
+            "question": "Jakie jest znaczenie aktualizacji oprogramowania?",
+            "options": [
+              "Poprawa wydajności",
+              "Usuwanie błędów i luk bezpieczeństwa",
+              "Dodawanie nowych funkcji",
+              "Wszystkie powyższe"
+            ],
+            "correct_answer": "Wszystkie powyższe"
+          },
+          {
+            "question": "Co to jest atak DDoS?",
+            "options": [
+              "Atak na serwer",
+              "Atak na użytkownika",
+              "Atak z wykorzystaniem wielu komputerów",
+              "Atak na aplikację"
+            ],
+            "correct_answer": "Atak z wykorzystaniem wielu komputerów"
+          },
+          {
+            "question": "Jakie są przykłady silnych haseł?",
+            "options": [
+              "123456",
+              "hasło",
+              "P@ssw0rd!",
+              "password123"
+            ],
+            "correct_answer": "P@ssw0rd!"
+          }
+        ]
+      },
+      {
+        "name": "Projektowanie oprogramowania",
+        "icon": "desktopcomputer",
+        "questions": [
+          {
+            "question": "Co to jest wzorzec projektowy?",
+            "options": [
+              "Schemat działania programu",
+              "Rozwiązanie dla powtarzającego się problemu",
+              "Typ oprogramowania",
+              "Język programowania"
+            ],
+            "correct_answer": "Rozwiązanie dla powtarzającego się problemu"
+          },
+          {
+            "question": "Jakie są fazy cyklu życia oprogramowania?",
+            "options": [
+              "Planowanie, projektowanie, wdrażanie, testowanie, utrzymanie",
+              "Planowanie, kodowanie, testowanie",
+              "Projektowanie, wdrażanie, utrzymanie",
+              "Analiza, projektowanie, testowanie, wdrażanie"
+            ],
+            "correct_answer": "Planowanie, projektowanie, wdrażanie, testowanie, utrzymanie"
+          },
+          {
+            "question": "Jakie jest główne zadanie analizy wymagań?",
+            "options": [
+              "Opracowanie kodu",
+              "Zrozumienie potrzeb użytkowników",
+              "Testowanie oprogramowania",
+              "Projektowanie interfejsu"
+            ],
+            "correct_answer": "Zrozumienie potrzeb użytkowników"
+          },
+          {
+            "question": "Co to jest Agile?",
+            "options": [
+              "Metodologia projektowania",
+              "Typ języka programowania",
+              "Rodzaj bazy danych",
+              "System operacyjny"
+            ],
+            "correct_answer": "Metodologia projektowania"
+          },
+          {
+            "question": "Co to jest dokumentacja techniczna?",
+            "options": [
+              "Opis kodu źródłowego",
+              "Instrukcja użytkownika",
+              "Dokumentacja procesów",
+              "Wszystkie powyższe"
+            ],
+            "correct_answer": "Wszystkie powyższe"
+          },
+          {
+            "question": "Jakie są najpopularniejsze języki programowania?",
+            "options": [
+              "Python, Java, C++",
+              "HTML, CSS, JavaScript",
+              "SQL, PHP, Ruby",
+              "Wszystkie powyższe"
+            ],
+            "correct_answer": "Wszystkie powyższe"
+          },
+          {
+            "question": "Co to jest test jednostkowy?",
+            "options": [
+              "Testowanie całego systemu",
+              "Testowanie pojedynczej funkcji",
+              "Testowanie interfejsu użytkownika",
+              "Testowanie wydajności"
+            ],
+            "correct_answer": "Testowanie pojedynczej funkcji"
+          },
+          {
+            "question": "Jakie są zalety korzystania z kontroli wersji?",
+            "options": [
+              "Śledzenie zmian",
+              "Współpraca zespołowa",
+              "Przywracanie wcześniejszych wersji",
+              "Wszystkie powyższe"
+            ],
+            "correct_answer": "Wszystkie powyższe"
+          },
+          {
+            "question": "Co to jest refaktoryzacja?",
+            "options": [
+              "Zwiększenie wydajności",
+              "Poprawa struktury kodu bez zmiany jego funkcji",
+              "Dodawanie nowych funkcji",
+              "Usuwanie błędów"
+            ],
+            "correct_answer": "Poprawa struktury kodu bez zmiany jego funkcji"
+          },
+          {
+            "question": "Co to jest UX?",
+            "options": [
+              "User Experience",
+              "User Exchange",
+              "User Extension",
+              "User Execution"
+            ],
+            "correct_answer": "User Experience"
+          }
+        ]
+      },
+      {
+        "name": "Projektowanie baz danych",
+        "icon": "server.rack",
+        "questions": [
+          {
+            "question": "Co to jest relacyjna baza danych?",
+            "options": [
+              "Baza danych oparta na dokumentach",
+              "Baza danych z tabelami i relacjami",
+              "Baza danych w chmurze",
+              "Baza danych klucz-wartość"
+            ],
+            "correct_answer": "Baza danych z tabelami i relacjami"
+          },
+          {
+            "question": "Co oznacza SQL?",
+            "options": [
+              "Structured Query Language",
+              "Simple Query Language",
+              "Standard Query Language",
+              "Secure Query Language"
+            ],
+            "correct_answer": "Structured Query Language"
+          },
+          {
+            "question": "Jakie są podstawowe operacje w SQL?",
+            "options": [
+              "SELECT, INSERT, UPDATE, DELETE",
+              "CREATE, ALTER, DROP",
+              "JOIN, UNION, INTERSECT",
+              "Wszystkie powyższe"
+            ],
+            "correct_answer": "Wszystkie powyższe"
+          },
+          {
+            "question": "Co to jest klucz główny?",
+            "options": [
+              "Unikalny identyfikator rekordu",
+              "Indeks bazy danych",
+              "Relacja między tabelami",
+              "Typ danych"
+            ],
+            "correct_answer": "Unikalny identyfikator rekordu"
+          },
+          {
+            "question": "Co to jest normalizacja bazy danych?",
+            "options": [
+              "Proces organizacji danych",
+              "Zwiększenie wydajności",
+              "Zabezpieczenie danych",
+              "Tworzenie kopii zapasowych"
+            ],
+            "correct_answer": "Proces organizacji danych"
+          },
+          {
+            "question": "Jakie są typy relacji w bazach danych?",
+            "options": [
+              "Jeden do jednego",
+              "Jeden do wielu",
+              "Wiele do wielu",
+              "Wszystkie powyższe"
+            ],
+            "correct_answer": "Wszystkie powyższe"
+          },
+          {
+            "question": "Co to jest indeks w bazie danych?",
+            "options": [
+              "Sposób organizacji danych",
+              "Zwiększenie szybkości wyszukiwania",
+              "Rodzaj zapytania",
+              "Typ danych"
+            ],
+            "correct_answer": "Zwiększenie szybkości wyszukiwania"
+          },
+          {
+            "question": "Co to jest zapytanie JOIN?",
+            "options": [
+              "Łączenie danych z różnych tabel",
+              "Usuwanie danych",
+              "Wstawianie danych",
+              "Aktualizacja danych"
+            ],
+            "correct_answer": "Łączenie danych z różnych tabel"
+          },
+          {
+            "question": "Co to jest transakcja w bazie danych?",
+            "options": [
+              "Zestaw operacji, które są wykonywane razem",
+              "Operacja na pojedynczym rekordzie",
+              "Zabezpieczenie danych",
+              "Tworzenie widoków"
+            ],
+            "correct_answer": "Zestaw operacji, które są wykonywane razem"
+          },
+          {
+            "question": "Jakie są typy baz danych?",
+            "options": [
+              "Relacyjne",
+              "Obiektowe",
+              "NoSQL",
+              "Wszystkie powyższe"
+            ],
+            "correct_answer": "Wszystkie powyższe"
+          }
+        ]
+      },
+      {
+        "name": "Tworzenie aplikacji na System iOS",
+        "icon": "app.badge",
+        "questions": [
+          {
+            "question": "Jakim językiem programowania można tworzyć aplikacje na iOS?",
+            "options": [
+              "Java",
+              "Python",
+              "Swift",
+              "C#"
+            ],
+            "correct_answer": "Swift"
+          },
+          {
+            "question": "Co to jest Xcode?",
+            "options": [
+              "Edytor tekstu",
+              "Zintegrowane środowisko programistyczne (IDE)",
+              "System operacyjny",
+              "Język programowania"
+            ],
+            "correct_answer": "Zintegrowane środowisko programistyczne (IDE)"
+          },
+          {
+            "question": "Jakie jest podstawowe narzędzie do projektowania interfejsu w Xcode?",
+            "options": [
+              "Storyboard",
+              "Interface Builder",
+              "XIB",
+              "SwiftUI"
+            ],
+            "correct_answer": "Storyboard"
+          },
+          {
+            "question": "Co to jest Cocoa Touch?",
+            "options": [
+              "Framework do aplikacji iOS",
+              "Język programowania",
+              "Typ bazy danych",
+              "Edytor graficzny"
+            ],
+            "correct_answer": "Framework do aplikacji iOS"
+          },
+          {
+            "question": "Jakie są różnice między UIView a UIViewController?",
+            "options": [
+              "UIView to widok, a UIViewController to kontroler widoku",
+              "UIViewController to widok, a UIView to kontroler widoku",
+              "Nie ma różnic",
+              "Oba są tym samym"
+            ],
+            "correct_answer": "UIView to widok, a UIViewController to kontroler widoku"
+          },
+          {
+            "question": "Jakie są najpopularniejsze biblioteki do tworzenia aplikacji iOS?",
+            "options": [
+              "Alamofire, SwiftyJSON",
+              "React, Angular",
+              "Django, Flask",
+              "Ruby on Rails"
+            ],
+            "correct_answer": "Alamofire, SwiftyJSON"
+          },
+          {
+            "question": "Co to jest App Store?",
+            "options": [
+              "Sklep z aplikacjami iOS",
+              "System operacyjny",
+              "Zintegrowane środowisko programistyczne",
+              "Język programowania"
+            ],
+            "correct_answer": "Sklep z aplikacjami iOS"
+          },
+          {
+            "question": "Jakie są typy aplikacji na iOS?",
+            "options": [
+              "Aplikacje natywne",
+              "Aplikacje webowe",
+              "Aplikacje hybrydowe",
+              "Wszystkie powyższe"
+            ],
+            "correct_answer": "Wszystkie powyższe"
+          },
+          {
+            "question": "Co to jest UIKit?",
+            "options": [
+              "Framework do tworzenia interfejsów użytkownika",
+              "Język programowania",
+              "Typ bazy danych",
+              "System operacyjny"
+            ],
+            "correct_answer": "Framework do tworzenia interfejsów użytkownika"
+          },
+          {
+            "question": "Co to jest SwiftUI?",
+            "options": [
+              "Nowy framework do tworzenia interfejsów użytkownika",
+              "Język programowania",
+              "Typ bazy danych",
+              "Edytor graficzny"
+            ],
+            "correct_answer": "Nowy framework do tworzenia interfejsów użytkownika"
+          }
+        ]
+      }
+    ]
+  
+}
