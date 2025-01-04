@@ -1,6 +1,33 @@
 import Foundation
+import SwiftUI
+import CoreLocation
 
-var quiz: Quiz = load("questions.json")
+struct QuestionData: Hashable, Codable, Identifiable {
+    var question: String;
+    var options: [String];
+    var correct_answer: String;
+    
+    var id: String {
+        question
+    }
+}
+
+struct CategoryData: Hashable, Codable, Identifiable {
+    var name: String;
+    var icon: String;
+    var id: String {
+        name
+    }
+    
+    var questions: [QuestionData];
+}
+
+struct QuizData: Codable {
+    var categories: [CategoryData]
+}
+
+
+var quiz: QuizData = load("questions.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
@@ -26,3 +53,4 @@ func load<T: Decodable>(_ filename: String) -> T {
         fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
     }
 }
+
