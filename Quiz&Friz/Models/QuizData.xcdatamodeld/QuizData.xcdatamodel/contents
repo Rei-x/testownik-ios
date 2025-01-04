@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23605" systemVersion="23H311" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="UserCategory" representedClassName="UserCategory" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="String"/>
+        <attribute name="isRandomAnswerOrder" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="isRandomQuestionOrder" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="lastAccessDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="questions" toMany="YES" deletionRule="Nullify" destinationEntity="UserQuestion" inverseName="category" inverseEntity="UserQuestion"/>
+    </entity>
+    <entity name="UserQuestion" representedClassName="UserQuestion" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="String"/>
+        <attribute name="isCorrect" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <relationship name="category" maxCount="1" deletionRule="Nullify" destinationEntity="UserCategory" inverseName="questions" inverseEntity="UserCategory"/>
+    </entity>
+</model>
