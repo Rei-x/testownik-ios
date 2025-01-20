@@ -13,7 +13,6 @@ struct SettingsView: View {
 
     init(category: Binding<Category>) {
         self._category = category
-        print("initialize!!!")
         self._numberOfQuestions = State(
             initialValue: category.wrappedValue.userCategory.numberOfQuestions)
         self._randomAnswerOrder = State(
