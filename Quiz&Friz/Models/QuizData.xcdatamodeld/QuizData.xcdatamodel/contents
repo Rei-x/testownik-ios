@@ -5,6 +5,7 @@
         <attribute name="isRandomAnswerOrder" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="isRandomQuestionOrder" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="lastAccessDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="numberOfQuestions" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="questions" toMany="YES" deletionRule="Nullify" destinationEntity="UserQuestion" inverseName="category" inverseEntity="UserQuestion"/>
     </entity>
     <entity name="UserQuestion" representedClassName="UserQuestion" syncable="YES" codeGenerationType="class">

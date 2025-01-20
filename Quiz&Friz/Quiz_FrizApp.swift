@@ -10,10 +10,11 @@ import SwiftUI
 @main
 struct Quiz_FrizApp: App {
     let persistentContainer = CoreDataManager.shared.persistentContainer
-    
+
     var body: some Scene {
         WindowGroup {
-            CategoryListView().environment(\.managedObjectContext, persistentContainer.viewContext)
+            CategoryListView().environment(
+                \.managedObjectContext, persistentContainer.viewContext)
         }
     }
 }

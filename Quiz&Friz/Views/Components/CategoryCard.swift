@@ -10,13 +10,13 @@ import SwiftUI
 struct CategoryCard: View {
     let title: String
     let iconName: String
-  
+
     var body: some View {
         VStack(spacing: 15) {
             Image(systemName: iconName)
                 .font(.system(size: 30))
                 .foregroundColor(.black)
-            
+
             Text(title)
                 .font(.body)
                 .multilineTextAlignment(.center)

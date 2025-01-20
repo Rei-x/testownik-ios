@@ -8,42 +8,97 @@
 import SwiftUI
 
 class CategoryViewModel: ObservableObject {
-    @Published private(set) var category: Category
-    @Published private(set) var questions: [QuestionData] = []
-    
-    private var categoryId: String
+    @Published var category: Category
+    @Published var numberOfCorrectAnswers = 0
+    @Published var numberOfIncorrectAnswers = 0
+    @Published var isFinalScreen = false
+    private var quizStartTime = Date()
+    private var quizEndTime = Date()
+
     private let coreDataManager = CoreDataManager.shared
+
+    var questions: [QuestionData] = []
+
+    private var differenceInSeconds: TimeInterval {
+        quizEndTime.timeIntervalSince(quizStartTime)
+    }
+    
+    var averageTime: Int {
+        Int(differenceInSeconds / Double(numberOfCorrectAnswers + numberOfIncorrectAnswers))
+    }
     
     var numberOfQuestions: Int {
-        questions.count
+        category.questions.count
     }
-    
+
     var numberOfCompletedQuestions: Int {
-        coreDataManager.getCategory(id: categoryId)?.questions?.count ?? 0
+        category.userCategory.questions?.count ?? 0
     }
-    
-    func markQuestionCompleted(id: String) {
-        coreDataManager.markQuestionCompleted(category: coreDataManager.getCategory(id: categoryId)!, questionId: id)
-        
-    }
-    
+
     init(categoryId: String) {
-        self.categoryId = categoryId
-        let quizCategory = quiz.categories.first { $0.id == categoryId }
-        
-        guard quizCategory != nil else {
-            fatalError("Category with id \(categoryId) not found")
-        }
-        
-        self.category = Category(
-            id: quizCategory!.id,
-            name: quizCategory!.name,
-            icon: quizCategory!.icon,
-            lastAccessed: nil
-        )
-        
-        self.questions = quizCategory!.questions
+        category = Category.fromId(id: categoryId)
+    }
+
+    func markQuestionAsCompleted(questionId: String) {
+        numberOfCorrectAnswers += 1
+        coreDataManager.markQuestionCompleted(
+            category: category.userCategory, questionId: questionId)
     }
     
-  
+    func markQuestionAsIncorrect() {
+        numberOfIncorrectAnswers += 1
+    }
+    
+    func startQuiz() {
+        if category.unansweredQuestions.count == 0 {
+            resetProgress()
+        }
+        shuffleQuestions()
+        quizStartTime = Date()
+        resetQuestionSession()
+    }
+    
+    func endQuiz() {
+        quizEndTime = Date()
+        isFinalScreen = true
+    }
+    
+    func resetQuestionSession() {
+        isFinalScreen = false
+        numberOfCorrectAnswers = 0
+        numberOfIncorrectAnswers = 0
+    }
+    
+    func resetProgress() {
+        coreDataManager.clearProgress(category: category.userCategory)
+        coreDataManager.saveContext()
+    }
+    
+    func shuffleQuestions() {
+        var questions = category.unansweredQuestions
+
+        if category.userCategory.isRandomAnswerOrder {
+            questions = questions.shuffled()
+        }
+
+        questions = Array(
+            questions.prefix(
+                min(
+                    questions.count,
+                    Int(category.userCategory.numberOfQuestions)
+                )
+            )
+        )
+
+        if category.userCategory.isRandomAnswerOrder {
+            questions = questions.map { question in
+                var question = question
+                question.options = question.options.shuffled()
+                return question
+            }
+        }
+
+        self.questions = questions
+    }
+
 }

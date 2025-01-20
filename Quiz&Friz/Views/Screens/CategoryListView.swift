@@ -1,9 +1,8 @@
 import SwiftUI
-
 struct CategoryListView: View {
     @StateObject private var viewModel = CategoryListViewModel()
+    @State private var selectedCategory: Category?
     @State private var isNavigating = false
-
     
     let columns = [
         GridItem(.flexible()),
@@ -11,8 +10,8 @@ struct CategoryListView: View {
     ]
     
     var body: some View {
-        NavigationView {
-            VStack( spacing: 20) {
+        NavigationStack {
+            VStack(spacing: 20) {
                 if !viewModel.latestCategories.isEmpty {
                     HStack {
                         Text("Ostatnie").bold()
@@ -22,17 +21,16 @@ struct CategoryListView: View {
                     ScrollView(.horizontal) {
                         HStack(spacing: 20) {
                             ForEach(viewModel.latestCategories) { category in
-                                NavigationLink(
-                                    destination: CategoryView(
-                                        categoryId: category.id, isNavigating: $isNavigating
-                                    ).navigationBarBackButtonHidden(isNavigating)
-                                ) {
+                                Button {
+                                    selectedCategory = category
+                                } label: {
                                     CategoryCard(
-                                        title: category.name, iconName: category.icon)
+                                        title: category.name,
+                                        iconName: category.icon
+                                    )
                                 }
                             }
                         }
-                        
                     }
                 }
                 
@@ -40,25 +38,31 @@ struct CategoryListView: View {
                     Text("Wszystkie").bold()
                     Spacer()
                 }
-                LazyVGrid(columns: [ GridItem(.adaptive(minimum: 160), alignment: .leading)],spacing: 16) {
+                
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), alignment: .leading)], spacing: 16) {
                     ForEach(viewModel.allCategories) { category in
-                        NavigationLink(
-                            destination: CategoryView(
-                                categoryId: category.id, isNavigating: $isNavigating
-                            ).navigationBarBackButtonHidden(isNavigating)
-                        ) {
+                        Button {
+                            selectedCategory = category
+                        } label: {
                             CategoryCard(
-                                title: category.name, iconName: category.icon
+                                title: category.name,
+                                iconName: category.icon
                             )
                         }
                     }
                 }
-                
-                
                 Spacer()
-            }.padding(.horizontal)
-            .navigationTitle("Rozpocznij quiz").navigationBarBackButtonHidden(
-                true)
+            }
+            .padding(.horizontal)
+            .navigationTitle("Rozpocznij quiz")
+            .navigationDestination(item: $selectedCategory) { category in
+                CategoryView(
+                    categoryId: category.id,
+                    isNavigating: $isNavigating
+                )
+                .navigationBarBackButtonHidden(isNavigating)
+               
+            }
         }
     }
 }

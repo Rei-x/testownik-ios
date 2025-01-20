@@ -10,7 +10,7 @@ class CoreDataManager {
     static let shared = CoreDataManager()
     
     lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "QuizProgress")
+        let container = NSPersistentContainer(name: "QuizData")
         container.loadPersistentStores { description, error in
             if let error = error {
                 fatalError("Unable to load persistent stores: \(error)")
@@ -23,7 +23,6 @@ class CoreDataManager {
         persistentContainer.viewContext
     }
     
-    // Mark a question as completed
     func markQuestionCompleted(category: UserCategory, questionId: String) {
         let question = category.questions!.filter { ($0 as AnyObject).id  == questionId } .first
         
@@ -39,6 +38,10 @@ class CoreDataManager {
         } catch {
             print("Error marking question completed: \(error)")
         }
+    }
+    
+    func clearProgress(category: UserCategory) {
+        category.questions?.forEach { context.delete($0 as! NSManagedObject) }
     }
     
     func getCategory(id: String) -> UserCategory? {
@@ -72,6 +75,15 @@ class CoreDataManager {
     }
 
 
-        
-    
+    func saveContext() {
+         if context.hasChanges {
+             do {
+                 try context.save()
+             } catch {
+                 let error = error as NSError
+                 fatalError("Unresolved error \(error), \(error.userInfo)")
+             }
+         }
+     }
+ 
 }
